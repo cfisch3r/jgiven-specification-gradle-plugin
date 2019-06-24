@@ -5,10 +5,7 @@
  */
 
 plugins {
-    // Apply the Kotlin JVM plugin to add support for Kotlin on the JVM.
-    id("com.palantir.idea-test-fix").version("0.1.0")
     id("org.jetbrains.kotlin.jvm").version("1.3.21")
-    groovy
     `java-gradle-plugin`
 }
 
