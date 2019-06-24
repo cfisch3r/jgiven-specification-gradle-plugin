@@ -1,0 +1,639 @@
+{
+  "className": "com.gildedrose.GeneralItemsUpdateSpecification",
+  "name": "General Items Update Specification",
+  "scenarios": [
+    {
+      "className": "com.gildedrose.GeneralItemsUpdateSpecification",
+      "testMethodName": "Item_Quality_is_reduced_twice_as_fast_after_sell_by_date",
+      "description": "Item Quality is reduced twice as fast after sell by date",
+      "tagIds": [
+        "com.gildedrose.BusinessCaseSpecification-Updates on General Items"
+      ],
+      "explicitParameters": [
+        "sellInPeriod"
+      ],
+      "derivedParameters": [
+        "sellInPeriod"
+      ],
+      "casesAsTable": true,
+      "scenarioCases": [
+        {
+          "caseNr": 1,
+          "steps": [
+            {
+              "name": "an item with Sellin of $ and Quality of $",
+              "words": [
+                {
+                  "value": "given",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "an item with Sellin of"
+                },
+                {
+                  "value": "on Sell By Date (0)",
+                  "argumentInfo": {
+                    "parameterName": "sellInPeriod",
+                    "argumentName": "sellInPeriod",
+                    "formattedValue": "on Sell By Date (0)"
+                  }
+                },
+                {
+                  "value": "and Quality of"
+                },
+                {
+                  "value": "10",
+                  "argumentInfo": {
+                    "argumentName": "quality",
+                    "formattedValue": "10"
+                  }
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 91972
+            },
+            {
+              "name": "items are updated",
+              "words": [
+                {
+                  "value": "when",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "items are updated"
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 68429
+            },
+            {
+              "name": "Qualitity of the item is",
+              "words": [
+                {
+                  "value": "then",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "Qualitity of the item is"
+                },
+                {
+                  "value": "8",
+                  "argumentInfo": {
+                    "argumentName": "expectedQuality",
+                    "formattedValue": "8"
+                  }
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 44869366
+            }
+          ],
+          "explicitArguments": [
+            "on Sell By Date (0)"
+          ],
+          "derivedArguments": [
+            "on Sell By Date (0)"
+          ],
+          "status": "SUCCESS",
+          "success": true,
+          "durationInNanos": 112181767
+        },
+        {
+          "caseNr": 2,
+          "steps": [
+            {
+              "name": "an item with Sellin of $ and Quality of $",
+              "words": [
+                {
+                  "value": "given",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "an item with Sellin of"
+                },
+                {
+                  "value": "after Sell By Date (-1)",
+                  "argumentInfo": {
+                    "parameterName": "sellInPeriod",
+                    "argumentName": "sellInPeriod",
+                    "formattedValue": "after Sell By Date (-1)"
+                  }
+                },
+                {
+                  "value": "and Quality of"
+                },
+                {
+                  "value": "10",
+                  "argumentInfo": {
+                    "argumentName": "quality",
+                    "formattedValue": "10"
+                  }
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 23757
+            },
+            {
+              "name": "items are updated",
+              "words": [
+                {
+                  "value": "when",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "items are updated"
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 18183
+            },
+            {
+              "name": "Qualitity of the item is",
+              "words": [
+                {
+                  "value": "then",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "Qualitity of the item is"
+                },
+                {
+                  "value": "8",
+                  "argumentInfo": {
+                    "argumentName": "expectedQuality",
+                    "formattedValue": "8"
+                  }
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 448931
+            }
+          ],
+          "explicitArguments": [
+            "after Sell By Date (-1)"
+          ],
+          "derivedArguments": [
+            "after Sell By Date (-1)"
+          ],
+          "status": "SUCCESS",
+          "success": true,
+          "durationInNanos": 3693704
+        }
+      ],
+      "durationInNanos": 115875471
+    },
+    {
+      "className": "com.gildedrose.GeneralItemsUpdateSpecification",
+      "testMethodName": "Item_Quality_never_drops_below_zero",
+      "description": "Item Quality never drops below zero",
+      "tagIds": [
+        "com.gildedrose.BusinessCaseSpecification-Updates on General Items"
+      ],
+      "explicitParameters": [
+        "sellinPeriod"
+      ],
+      "derivedParameters": [
+        "sellinPeriod"
+      ],
+      "casesAsTable": true,
+      "scenarioCases": [
+        {
+          "caseNr": 1,
+          "steps": [
+            {
+              "name": "an item with Sellin of $ and Quality of $",
+              "words": [
+                {
+                  "value": "given",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "an item with Sellin of"
+                },
+                {
+                  "value": "before Sell By Date (5)",
+                  "argumentInfo": {
+                    "parameterName": "sellinPeriod",
+                    "argumentName": "sellInPeriod",
+                    "formattedValue": "before Sell By Date (5)"
+                  }
+                },
+                {
+                  "value": "and Quality of"
+                },
+                {
+                  "value": "0",
+                  "argumentInfo": {
+                    "argumentName": "quality",
+                    "formattedValue": "0"
+                  }
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 37178
+            },
+            {
+              "name": "items are updated",
+              "words": [
+                {
+                  "value": "when",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "items are updated"
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 73615
+            },
+            {
+              "name": "Qualitity of the item is",
+              "words": [
+                {
+                  "value": "then",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "Qualitity of the item is"
+                },
+                {
+                  "value": "0",
+                  "argumentInfo": {
+                    "argumentName": "expectedQuality",
+                    "formattedValue": "0"
+                  }
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 1357637
+            }
+          ],
+          "explicitArguments": [
+            "before Sell By Date (5)"
+          ],
+          "derivedArguments": [
+            "before Sell By Date (5)"
+          ],
+          "status": "SUCCESS",
+          "success": true,
+          "durationInNanos": 4952686
+        },
+        {
+          "caseNr": 2,
+          "steps": [
+            {
+              "name": "an item with Sellin of $ and Quality of $",
+              "words": [
+                {
+                  "value": "given",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "an item with Sellin of"
+                },
+                {
+                  "value": "on Sell By Date (0)",
+                  "argumentInfo": {
+                    "parameterName": "sellinPeriod",
+                    "argumentName": "sellInPeriod",
+                    "formattedValue": "on Sell By Date (0)"
+                  }
+                },
+                {
+                  "value": "and Quality of"
+                },
+                {
+                  "value": "0",
+                  "argumentInfo": {
+                    "argumentName": "quality",
+                    "formattedValue": "0"
+                  }
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 32086
+            },
+            {
+              "name": "items are updated",
+              "words": [
+                {
+                  "value": "when",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "items are updated"
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 20648
+            },
+            {
+              "name": "Qualitity of the item is",
+              "words": [
+                {
+                  "value": "then",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "Qualitity of the item is"
+                },
+                {
+                  "value": "0",
+                  "argumentInfo": {
+                    "argumentName": "expectedQuality",
+                    "formattedValue": "0"
+                  }
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 613450
+            }
+          ],
+          "explicitArguments": [
+            "on Sell By Date (0)"
+          ],
+          "derivedArguments": [
+            "on Sell By Date (0)"
+          ],
+          "status": "SUCCESS",
+          "success": true,
+          "durationInNanos": 3545736
+        },
+        {
+          "caseNr": 3,
+          "steps": [
+            {
+              "name": "an item with Sellin of $ and Quality of $",
+              "words": [
+                {
+                  "value": "given",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "an item with Sellin of"
+                },
+                {
+                  "value": "after Sell By Date (-1)",
+                  "argumentInfo": {
+                    "parameterName": "sellinPeriod",
+                    "argumentName": "sellInPeriod",
+                    "formattedValue": "after Sell By Date (-1)"
+                  }
+                },
+                {
+                  "value": "and Quality of"
+                },
+                {
+                  "value": "0",
+                  "argumentInfo": {
+                    "argumentName": "quality",
+                    "formattedValue": "0"
+                  }
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 67367
+            },
+            {
+              "name": "items are updated",
+              "words": [
+                {
+                  "value": "when",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "items are updated"
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 35525
+            },
+            {
+              "name": "Qualitity of the item is",
+              "words": [
+                {
+                  "value": "then",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "Qualitity of the item is"
+                },
+                {
+                  "value": "0",
+                  "argumentInfo": {
+                    "argumentName": "expectedQuality",
+                    "formattedValue": "0"
+                  }
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 714694
+            }
+          ],
+          "explicitArguments": [
+            "after Sell By Date (-1)"
+          ],
+          "derivedArguments": [
+            "after Sell By Date (-1)"
+          ],
+          "status": "SUCCESS",
+          "success": true,
+          "durationInNanos": 5381023
+        }
+      ],
+      "durationInNanos": 13879445
+    },
+    {
+      "className": "com.gildedrose.GeneralItemsUpdateSpecification",
+      "testMethodName": "Item_Sellin_is_reduces_on_Update",
+      "description": "Item Sellin is reduces on Update",
+      "tagIds": [
+        "com.gildedrose.BusinessCaseSpecification-Updates on General Items"
+      ],
+      "explicitParameters": [],
+      "derivedParameters": [],
+      "casesAsTable": false,
+      "scenarioCases": [
+        {
+          "caseNr": 1,
+          "steps": [
+            {
+              "name": "an item with Sellin of $ and Quality of $",
+              "words": [
+                {
+                  "value": "given",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "an item with Sellin of"
+                },
+                {
+                  "value": "5",
+                  "argumentInfo": {
+                    "argumentName": "sellIn",
+                    "formattedValue": "5"
+                  }
+                },
+                {
+                  "value": "and Quality of"
+                },
+                {
+                  "value": "7",
+                  "argumentInfo": {
+                    "argumentName": "quality",
+                    "formattedValue": "7"
+                  }
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 58195
+            },
+            {
+              "name": "items are updated",
+              "words": [
+                {
+                  "value": "when",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "items are updated"
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 62554
+            },
+            {
+              "name": "SellIn of the item is",
+              "words": [
+                {
+                  "value": "then",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "SellIn of the item is"
+                },
+                {
+                  "value": "4",
+                  "argumentInfo": {
+                    "argumentName": "expectedSellIn",
+                    "formattedValue": "4"
+                  }
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 1712954
+            }
+          ],
+          "explicitArguments": [],
+          "derivedArguments": [],
+          "status": "SUCCESS",
+          "success": true,
+          "durationInNanos": 5937323
+        }
+      ],
+      "durationInNanos": 5937323,
+      "executionStatus": "SUCCESS"
+    },
+    {
+      "className": "com.gildedrose.GeneralItemsUpdateSpecification",
+      "testMethodName": "Item_Quality_is_reduced_on_Update",
+      "description": "Item Quality is reduced on Update",
+      "tagIds": [
+        "com.gildedrose.BusinessCaseSpecification-Updates on General Items"
+      ],
+      "explicitParameters": [],
+      "derivedParameters": [],
+      "casesAsTable": false,
+      "scenarioCases": [
+        {
+          "caseNr": 1,
+          "steps": [
+            {
+              "name": "an item with Sellin of $ and Quality of $",
+              "words": [
+                {
+                  "value": "given",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "an item with Sellin of"
+                },
+                {
+                  "value": "5",
+                  "argumentInfo": {
+                    "argumentName": "sellIn",
+                    "formattedValue": "5"
+                  }
+                },
+                {
+                  "value": "and Quality of"
+                },
+                {
+                  "value": "8",
+                  "argumentInfo": {
+                    "argumentName": "quality",
+                    "formattedValue": "8"
+                  }
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 23133
+            },
+            {
+              "name": "items are updated",
+              "words": [
+                {
+                  "value": "when",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "items are updated"
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 18503
+            },
+            {
+              "name": "Qualitity of the item is",
+              "words": [
+                {
+                  "value": "then",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "Qualitity of the item is"
+                },
+                {
+                  "value": "7",
+                  "argumentInfo": {
+                    "argumentName": "expectedQuality",
+                    "formattedValue": "7"
+                  }
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 330114
+            }
+          ],
+          "explicitArguments": [],
+          "derivedArguments": [],
+          "status": "SUCCESS",
+          "success": true,
+          "durationInNanos": 3740991
+        }
+      ],
+      "durationInNanos": 3740991,
+      "executionStatus": "SUCCESS"
+    }
+  ],
+  "tagMap": {
+    "com.gildedrose.BusinessCaseSpecification-Updates on General Items": {
+      "fullType": "com.gildedrose.BusinessCaseSpecification",
+      "type": "BusinessCaseSpecification",
+      "name": "Business Cases",
+      "value": "Updates on General Items",
+      "description": "",
+      "href": ""
+    }
+  }
+}

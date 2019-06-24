@@ -32,9 +32,17 @@ class JgivenAsciidocPluginTest {
 
         File(projectDirectory.toFile(),BUILd_FILE).writeText(buildConfiguration)
 
+        File(projectDirectory.toFile(),"jgiven-reports").mkdir()
+
+        File(projectDirectory.toFile(),BUILd_FILE).writeText(buildConfiguration)
+
+        val text = this.javaClass.classLoader.getResource("jgiven/reports/result.json").readText()
+        File(projectDirectory.toFile(),"jgiven-reports/result.json").writeText(text)
+
         val result = gradleRunner(projectDirectory).build()
 
         assertThat(result.task(":" + PLUGIN_TASK)?.outcome).isEqualTo(TaskOutcome.UP_TO_DATE)
+        assertThat(File(projectDirectory.toFile(),"specification/spec.pdf")).exists()
     }
 
     private fun gradleRunner(projectDirectory: Path): GradleRunner {
