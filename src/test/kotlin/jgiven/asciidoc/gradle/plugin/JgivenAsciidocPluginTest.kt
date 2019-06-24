@@ -13,7 +13,8 @@ class JgivenAsciidocPluginTest {
 
     val PLUGIN_ID = "jgiven-asciidoc"
     val PLUGIN_TASK = "jgivenSpecReport"
-    val BUILd_FILE = "build.gradle.kts"
+    val BUILD_FILE = "build.gradle.kts"
+    val JGIVEN_REPORTS_DIR = "jgiven-reports"
 
     @Test
     internal fun `should be loadable via plugin id` () {
@@ -24,25 +25,30 @@ class JgivenAsciidocPluginTest {
 
     @Test
     internal fun `should generate Specification from Jgiven Report` (@TempDir projectDirectory: Path) {
-        val buildConfiguration = """
+
+        createBuildFile(projectDirectory, """
             plugins {
               id("$PLUGIN_ID")
             }
-        """.trimIndent()
+        """.trimIndent())
 
-        File(projectDirectory.toFile(),BUILd_FILE).writeText(buildConfiguration)
+        addJgivenResultToProjectDir(projectDirectory, "jgiven/reports/result.json")
 
-        File(projectDirectory.toFile(),"jgiven-reports").mkdir()
+        val result = runBuild(projectDirectory)
 
-        File(projectDirectory.toFile(),BUILd_FILE).writeText(buildConfiguration)
+        assertThat(result.task(":$PLUGIN_TASK")?.outcome).isEqualTo(TaskOutcome.UP_TO_DATE)
+    }
 
-        val text = this.javaClass.classLoader.getResource("jgiven/reports/result.json").readText()
-        File(projectDirectory.toFile(),"jgiven-reports/result.json").writeText(text)
+    private fun runBuild(projectDirectory: Path) = gradleRunner(projectDirectory).build()
 
-        val result = gradleRunner(projectDirectory).build()
+    private fun addJgivenResultToProjectDir(projectDirectory: Path, resultResource: String) {
+        File(projectDirectory.toFile(), JGIVEN_REPORTS_DIR).mkdir()
+        val text = this.javaClass.classLoader.getResource(resultResource).readText()
+        File(projectDirectory.toFile(), "$JGIVEN_REPORTS_DIR/result.json").writeText(text)
+    }
 
-        assertThat(result.task(":" + PLUGIN_TASK)?.outcome).isEqualTo(TaskOutcome.UP_TO_DATE)
-        assertThat(File(projectDirectory.toFile(),"specification/spec.pdf")).exists()
+    private fun createBuildFile(projectDirectory: Path, buildConfiguration: String) {
+        File(projectDirectory.toFile(), BUILD_FILE).writeText(buildConfiguration)
     }
 
     private fun gradleRunner(projectDirectory: Path): GradleRunner {
