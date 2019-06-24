@@ -1,4 +1,4 @@
-package jgiven.asciidoc.gradle.plugin
+package de.agiledojo.jgivenspec
 
 import org.assertj.core.api.Assertions.assertThat
 import org.gradle.testfixtures.ProjectBuilder
@@ -9,9 +9,9 @@ import org.junit.jupiter.api.io.TempDir
 import java.io.File
 import java.nio.file.Path
 
-class JgivenAsciidocPluginTest {
+class JgivenSpecificationPluginTest {
 
-    val PLUGIN_ID = "jgiven-asciidoc"
+    val PLUGIN_ID = "jgiven-specification"
     val PLUGIN_TASK = "jgivenSpecReport"
     val BUILD_FILE = "build.gradle.kts"
     val JGIVEN_REPORTS_DIR = "jgiven-reports"
