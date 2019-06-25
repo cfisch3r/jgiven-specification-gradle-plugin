@@ -4,13 +4,13 @@ import org.asciidoctor.Asciidoctor
 import org.jtwig.JtwigModel
 import org.jtwig.JtwigTemplate
 
-class AsciiDocExporter(val writer: Writer) {
+class AsciiDocExporter(val writer: Writer) : SpecExporter{
 
     var template = ""
 
-    fun toHtml(specification: Specification) {
+    override fun toHtml(features: List<Feature>) {
         val jtwigTemplate = JtwigTemplate.inlineTemplate(template)
-        val model = JtwigModel.newModel().with("name", specification.name)
+        val model = JtwigModel.newModel().with("features", features)
         val adoc = jtwigTemplate.render(model)
         val asciidoctor = Asciidoctor.Factory.create()
         val html = asciidoctor.convert( adoc, HashMap<String, Object>() as Map<String, Any>?)

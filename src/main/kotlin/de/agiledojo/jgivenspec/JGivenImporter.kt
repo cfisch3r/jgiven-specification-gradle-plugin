@@ -8,10 +8,10 @@ class JGivenImporter(private val exporter: SpecExporter) {
 
     fun read(importDir: File) {
         val gson = Gson()
-        val features = ArrayList<Specification>()
+        val features = ArrayList<Feature>()
         importDir.walk().forEach {
             if (it.isFile)
-                features.add(gson.fromJson(it.readText(),Specification::class.java))
+                features.add(gson.fromJson(it.readText(),Feature::class.java))
         }
         exporter.toHtml(features)
     }

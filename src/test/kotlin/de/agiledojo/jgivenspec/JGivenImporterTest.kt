@@ -17,12 +17,21 @@ class JGivenImporterTest {
     private lateinit var exporter: SpecExporter
 
     @Test
-    internal fun readsSpecificationFromReport(@TempDir directory: Path) {
-        val reportsDir = File(directory.toFile(), "jgiven-reports")
-        reportsDir.mkdir()
-        val report = File(this.javaClass.classLoader.getResource("jgiven/reports/de.agiledojo.jgivenspec.samples.SimpleFeatureTest.json").file)
-        report.copyTo(File(reportsDir,report.name))
+    internal fun readsFeatureFromReport(@TempDir tempDir: Path) {
+        val reportsDir = createReportDir(tempDir)
+        addRessourceToDir(reportsDir, "de.agiledojo.jgivenspec.samples.SimpleFeatureTest.json")
         JGivenImporter(exporter).read(reportsDir)
-        verify(exporter).toHtml(Arrays.asList(Specification("Simple Feature")))
+        verify(exporter).toHtml(Arrays.asList(Feature("Simple Feature")))
+    }
+
+    private fun addRessourceToDir(reportsDir: File, ressource: String) {
+        val report = File(this.javaClass.classLoader.getResource("jgiven/reports/$ressource").file)
+        report.copyTo(File(reportsDir, report.name))
+    }
+
+    private fun createReportDir(tempDir: Path): File {
+        val reportsDir = File(tempDir.toFile(), "jgiven-reports")
+        reportsDir.mkdir()
+        return reportsDir
     }
 }
