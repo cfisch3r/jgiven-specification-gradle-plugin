@@ -27,6 +27,12 @@ dependencies {
     testImplementation("org.mockito:mockito-junit-jupiter:2.24.0")
 
     "samplesImplementation"("org.junit.jupiter:junit-jupiter:5.4.2")
+    "samplesImplementation"("com.tngtech.jgiven:jgiven-junit5:0.17.1")
+    constraints {
+        "samplesImplementation"("net.bytebuddy:byte-buddy:1.9.13") {
+            because("previous versions were not compatible with java 12/13")
+        }
+    }
 
 }
 
