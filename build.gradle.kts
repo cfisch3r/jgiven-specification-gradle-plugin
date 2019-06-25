@@ -17,6 +17,7 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("org.asciidoctor:asciidoctorj:2.1.0")
     implementation("org.jtwig:jtwig-core:5.87.0.RELEASE")
+    implementation("com.google.code.gson:gson:2.8.5")
 
     implementation(gradleApi())
     implementation(localGroovy())
