@@ -1,0 +1,29 @@
+{
+  "className": "de.agiledojo.jgivenspec.samples.SimpleFeatureTest",
+  "name": "Simple Feature",
+  "scenarios": [
+    {
+      "className": "de.agiledojo.jgivenspec.samples.SimpleFeatureTest",
+      "testMethodName": "firstSpec",
+      "description": "First spec",
+      "tagIds": [],
+      "explicitParameters": [],
+      "derivedParameters": [],
+      "casesAsTable": false,
+      "scenarioCases": [
+        {
+          "caseNr": 1,
+          "steps": [],
+          "explicitArguments": [],
+          "derivedArguments": [],
+          "status": "SUCCESS",
+          "success": true,
+          "durationInNanos": 12140198
+        }
+      ],
+      "durationInNanos": 12140198,
+      "executionStatus": "SUCCESS"
+    }
+  ],
+  "tagMap": {}
+}
