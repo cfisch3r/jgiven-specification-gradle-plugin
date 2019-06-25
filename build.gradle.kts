@@ -9,7 +9,7 @@ repositories {
 
 sourceSets {
     val samples by creating {
-        java.srcDir("src/samples/kotlin")
+        java.srcDir("src/samples/java")
     }
 }
 

@@ -1,5 +1,7 @@
 .idea
 
+jgiven-reports/
+
 # Ignore Gradle project-specific cache directory
 .gradle
 
