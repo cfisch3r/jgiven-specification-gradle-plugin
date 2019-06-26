@@ -3,7 +3,6 @@ package de.agiledojo.jgivenspec
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import java.io.File
-import java.io.FileWriter
 
 class JgivenSpecificationPlugin : Plugin<Project> {
 
@@ -12,14 +11,12 @@ class JgivenSpecificationPlugin : Plugin<Project> {
 
             val reportsDir = File(project.projectDir, "jgiven-reports")
             if (reportsDir.exists()) {
-                val importer = JGivenImporter(AsciiDocExporter(object : Writer {
-                    override fun write(content: String) {
-                        val specFile = File(project.projectDir, "spec.html")
-                        FileWriter(specFile).write(content)
-                    }
-                }))
+                val importer = JGivenImporter(AsciiDocExporter(FileWriter(specFile(project.projectDir))))
                 importer.read(reportsDir)
             }
         }
     }
+
+    private fun specFile(reportsDir: File) = reportsDir.toPath()
+            .resolve("specification/spec.html")
 }

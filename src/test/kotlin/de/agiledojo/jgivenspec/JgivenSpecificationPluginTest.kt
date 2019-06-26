@@ -37,6 +37,7 @@ class JgivenSpecificationPluginTest {
         val result = runBuild(projectDirectory)
 
         assertThat(result.task(":$PLUGIN_TASK")?.outcome).isEqualTo(TaskOutcome.UP_TO_DATE)
+        assertThat(projectDirectory.resolve("specification/spec.html").toFile()).exists()
     }
 
     private fun runBuild(projectDirectory: Path) = gradleRunner(projectDirectory).build()
