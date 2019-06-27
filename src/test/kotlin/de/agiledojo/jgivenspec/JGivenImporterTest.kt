@@ -20,7 +20,7 @@ class JGivenImporterTest {
     internal fun readsFeatureFromReport(@TempDir tempDir: Path) {
         val reportsDir = createReportDir(tempDir)
         addRessourceToDir(reportsDir, "de.agiledojo.jgivenspec.samples.SimpleFeatureTest.json")
-        JGivenImporter(exporter).read(reportsDir)
+        JGivenImporter(exporter).read(reportsDir.toPath())
         verify(exporter).toHtml(Arrays.asList(Feature("Simple Feature")))
     }
 

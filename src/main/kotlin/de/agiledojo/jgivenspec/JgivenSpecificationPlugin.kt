@@ -12,7 +12,7 @@ class JgivenSpecificationPlugin : Plugin<Project> {
             val reportsDir = File(project.projectDir, "jgiven-reports")
             if (reportsDir.exists()) {
                 val importer = JGivenImporter(AsciiDocExporter(FileWriter(specFile(project.projectDir))))
-                importer.read(reportsDir)
+                importer.read(reportsDir.toPath())
             }
         }
     }
